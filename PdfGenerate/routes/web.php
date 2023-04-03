@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\StudentController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,5 +15,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('students.index');
 });
+
+Route::get('/', [StudentController::class,'index']);
+Route::get('generate-pdf', [StudentController::class, 'generatePDF'])->name('generate-pdf');

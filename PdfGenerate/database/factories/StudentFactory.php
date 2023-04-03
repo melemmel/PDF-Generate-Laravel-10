@@ -18,6 +18,8 @@ class StudentFactory extends Factory
     {
         return [
             //
+            'name' => fake()->name,
+            'department' => fake()->randomElement(['CCS', 'CHS', 'COEA', 'CTHBM', 'CTDE', 'CAS'])
         ];
     }
 }
